@@ -13,6 +13,7 @@ export default class App extends Component{
   }
 
   hundlerBt(){
+    this.setState(()=>{return {consulteApi:false}});
     axios.get("https://www.dolarsi.com/api/api.php?type=valoresprincipales")
           .then(response=>{
             this.setState(() => {return {consulteApi: true, item:  response.data}});
